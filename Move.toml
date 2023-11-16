@@ -1,0 +1,19 @@
+[package]
+name = "register"
+version = "1.0.0"
+authors = [
+    "919603023@qq.com"
+]
+
+[addresses]
+register = "0xc59011c0918ba3dd64696a2e411de83a6b418fcb88c1f21ee2a4b8ec184bdc5d"
+
+[dev-addresses]
+register = "0x1234"
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "mainnet"
+subdir = "aptos-move/framework/aptos-framework"
+
+[dev-dependencies]
