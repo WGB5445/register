@@ -86,4 +86,16 @@ module register::register {
         });
         cap
     }
+
+    #[view]
+    public fun get_address(sender: address, seed: vector<u8>) : address{
+        account::create_resource_address(&sender, seed)
+    }
+
+    #[view]
+    public fun exists_cap (sender: address, seed: vector<u8>): bool acquires CapTable {
+        let cap_table =  borrow_global<CapTable>(@register);
+        smart_table::contains(&cap_table.caps, get_address(sender, seed))
+    }
+
 }
